@@ -18,10 +18,11 @@
 }
 
 .lista-horarios {
-  max-width: 600px;
+  max-width: 800px; /* un poco más ancho para todos los campos */
   margin: 0 auto;
   padding: 0;
   list-style: none;
+  font-family: 'Arial', sans-serif;
 }
 
 .item-horario {
@@ -30,7 +31,8 @@
   padding: 10px 15px;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: center;
   transition: background 0.3s;
 }
@@ -42,10 +44,36 @@
 .sigla {
   font-weight: bold;
   color: #111827;
+  width: 80px;
 }
 
 .nombre {
   color: #374151;
+  flex: 2;
+}
+
+.docente {
+  color: #555;
+  flex: 1.5;
+}
+
+.sala {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.horario {
+  width: 100px;
+  text-align: center;
+  color: #444;
+}
+
+.obs {
+  flex: 2;
+  color: #b71c1c;
+  font-style: italic;
 }
 
 .id {

@@ -4,9 +4,12 @@
 <div *ngIf="error" class="error">{{ error }}</div>
 
 <ul *ngIf="!cargando && !error" class="lista-horarios">
-  <li *ngFor="let horario of asignaturas" class="item-horario">
-    <span class="sigla">{{ horario.sigla }}</span> - 
-    <span class="nombre">{{ horario.nombre }}</span>
-    <span class="id">ID: {{ horario.id_asignatura }}</span>
-  </li>
+  <li *ngFor="let clase of clases" class="item-horario">
+  <span class="sigla">{{ clase['Sigla Sección'] }}</span> - 
+  <span class="nombre">{{ clase['Nombre Asignatura'] }}</span> - 
+  <span class="docente">{{ clase['NOMBRE'] }}</span> - 
+  <span class="sala">{{ clase['Sala'] }}</span> - 
+  <span class="horario">{{ clase['Horario'] }}</span> - 
+  <span class="obs">{{ clase['Observacion'] }}</span>
+</li>
 </ul>

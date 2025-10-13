@@ -1,15 +1,28 @@
 <h2 class="titulo">Horarios</h2>
 
-<div *ngIf="cargando" class="cargando">Cargando horarios...</div>
-<div *ngIf="error" class="error">{{ error }}</div>
-
-<ul *ngIf="!cargando && !error" class="lista-horarios">
-  <li *ngFor="let clase of clases" class="item-horario">
-  <span class="sigla">{{ clase['Sigla Sección'] }}</span> - 
-  <span class="nombre">{{ clase['Nombre Asignatura'] }}</span> - 
-  <span class="docente">{{ clase['NOMBRE'] }}</span> - 
-  <span class="sala">{{ clase['Sala'] }}</span> - 
-  <span class="horario">{{ clase['Horario'] }}</span> - 
-  <span class="obs">{{ clase['Observacion'] }}</span>
-</li>
-</ul>
+<table *ngIf="!cargando && !error" class="tabla-horarios">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Sigla Sección</th>
+      <th>Nombre Asignatura</th>
+      <th>Docente</th>
+      <th>Sala</th>
+      <th>Hora Inicio</th>
+      <th>Hora Fin</th>
+      <th>Observación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let clase of clases">
+      <td>{{ clase['Fecha'] | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ clase['Sigla Sección'] }}</td>
+      <td>{{ clase['Nombre Asignatura'] }}</td>
+      <td>{{ clase['NOMBRE'] }}</td>
+      <td>{{ clase['Sala'] }}</td>
+      <td>{{ clase['Hora Inicio'] }}</td>
+      <td>{{ clase['Hora Fin'] }}</td>
+      <td>{{ clase['Observacion'] }}</td>
+    </tr>
+  </tbody>
+</table>
